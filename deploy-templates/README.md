@@ -35,8 +35,8 @@ A Helm chart for Kubernetes
 | fullnameOverride | string | `""` |  |
 | httpGet.path | string | `"/api/liveness"` |  |
 | httpGet.path | string | `"/api/readiness"` |  |
-| httpGet.port | int | `80` |  |
-| httpGet.port | int | `80` |  |
+| httpGet.port | int | `8080` |  |
+| httpGet.port | int | `8080` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"springboot-probes"` |  |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
