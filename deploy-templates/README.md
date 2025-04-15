@@ -1,6 +1,9 @@
 # springboot-probes
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
+
+
+
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square) 
 
 A Helm chart for Kubernetes
 
@@ -16,6 +19,8 @@ A Helm chart for Kubernetes
 
 * <https://github.com/KubeRocketCI/template-springboot.git>
 
+
+
 ## Values
 
 | Key | Type | Default | Description |
@@ -25,7 +30,13 @@ A Helm chart for Kubernetes
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| failureThreshold | int | `3` |  |
+| failureThreshold | int | `3` |  |
 | fullnameOverride | string | `""` |  |
+| httpGet.path | string | `"/api/liveness"` |  |
+| httpGet.path | string | `"/api/readiness"` |  |
+| httpGet.port | int | `80` |  |
+| httpGet.port | int | `80` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"springboot-probes"` |  |
 | image.tag | string | `""` | Overrides the image tag whose default is the chart appVersion. |
@@ -33,19 +44,22 @@ A Helm chart for Kubernetes
 | ingress.annotations | object | `{}` |  |
 | ingress.className | string | `""` |  |
 | ingress.dnsWildcard | string | `"development.krci-dev.cloudmentor.academy"` |  |
-| ingress.enabled | bool | `false` |  |
+| ingress.enabled | bool | `true` |  |
 | ingress.hosts[0].host | string | `"edpDefault"` |  |
 | ingress.hosts[0].paths[0].path | string | `"/"` |  |
 | ingress.hosts[0].paths[0].pathType | string | `"ImplementationSpecific"` |  |
 | ingress.tls | list | `[]` |  |
-| livenessProbe.tcpSocket.port | string | `"http"` |  |
+| initialDelaySeconds | int | `15` |  |
+| initialDelaySeconds | int | `15` |  |
+| livenessProbe | string | `nil` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` | https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector |
+| periodSeconds | int | `5` |  |
+| periodSeconds | int | `5` |  |
 | podAnnotations | object | `{}` |  |
 | podLabels | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
-| readinessProbe.initialDelaySeconds | int | `20` |  |
-| readinessProbe.tcpSocket.port | string | `"http"` |  |
+| readinessProbe | string | `nil` |  |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
